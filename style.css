@@ -26,7 +26,6 @@ body {
   padding: 15px;
   border: 2px solid #3e14b2;
   border-radius: 10px;
-  /* box-shadow: 4px 8px 16px 0px rgba(3, 41, 255, 0.493); */
   box-shadow: 0px 0px 39px 9px rgba(0, 73, 255, 0.52);
   -webkit-box-shadow: 0px 0px 39px 9px rgba(0, 73, 255, 0.52);
   -moz-box-shadow: 0px 0px 39px 9px rgba(0, 73, 255, 0.52);
@@ -183,8 +182,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto;
   padding: 0;
 }
@@ -205,7 +204,6 @@ canvas {
 }
 
 /* Modal de advertecia */
-/* Contenedor oscuro de fondo */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -246,19 +244,21 @@ canvas {
 }
 
 .modal-contenido h3 {
+  background: #f2f2f2;
   margin-bottom: 10px;
   color: #111;
   font-size: 22px;
 }
 
 .modal-contenido p {
+  background: #f2f2f2;
   margin-bottom: 20px;
   color: #555;
   font-size: 16px;
 }
 
 .btn-modal {
-  background: #3e14b2;
+  background: #0532ff;
   color: #f2f2f2;
   border: none;
   padding: 12px 24px;
@@ -270,5 +270,5 @@ canvas {
 }
 
 .btn-modal:hover {
-  background: #2b0c80;
+  background: #0211e2;
 }
