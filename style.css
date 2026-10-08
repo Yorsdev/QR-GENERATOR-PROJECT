@@ -2,22 +2,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #f2f2f2;
-  overflow: hidden;
+  background: #0f0f0f;
+  /* overflow: hidden; */
 }
 
 body {
   font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .contenedor {
-  max-width: 90%;
-  width: 400px;
-  margin: 20px auto;
+  background-color: #f2f2f2;
+  max-width: 100vw;
+  /* width: 60%;*/
+  height: 90vh;
+  margin: 0;
   padding: 15px;
   border: 2px solid #3e14b2;
   border-radius: 10px;
-  box-shadow: 4px 8px 16px 0px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 4px 8px 16px 0px rgba(3, 41, 255, 0.493); */
+  box-shadow: 0px 0px 39px 9px rgba(0, 73, 255, 0.52);
+  -webkit-box-shadow: 0px 0px 39px 9px rgba(0, 73, 255, 0.52);
+  -moz-box-shadow: 0px 0px 39px 9px rgba(0, 73, 255, 0.52);
 }
 
 .contenedor-titulo {
@@ -29,6 +41,10 @@ body {
   background: -webkit-linear-gradient(45deg, #5c18a3, #0532ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  caret-color: transparent;
+}
+.formulario {
+  background-color: #f2f2f2;
 }
 
 .formulario input[type="text"] {
@@ -43,46 +59,149 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.formulario .btn {
-  width: 100%;
-  border: none;
-  background: rgb(0, 0, 0);
-  color: #fff;
-  cursor: pointer;
-  padding: 20px;
-  font-size: 20px;
-  border-radius: 5px;
-  font-family: "Open Sans", sans-serif;
-  transition: all 0.2s ease-in-out;
-}
+/* NUEVO CONTENIDO */
 
-.formulario .btn:hover {
-  background: #3e14b2;
-}
-
-.contenedorQR {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
-}
-
+/* ESTILOS BASE DE AMBOS BOTONES */
+.btn,
 .download {
   width: 100%;
   border: none;
-  background: #fff; /* Verde para destacar la acción de descarga */
-  color: #000;
+  outline: none;
+  color: #fff;
   cursor: pointer;
   padding: 20px;
   font-size: 20px;
-  border-radius: 5px;
   font-family: "Open Sans", sans-serif;
-  margin-top: 15px;
-  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  caret-color: transparent;
+  transition: color 0.2s ease-in-out;
 }
 
-.download:hover {
-  background: #55d600;
-  color: #fff;
+.btn {
+  background: #000;
+}
+
+.download {
+  background: #0532ff;
+  margin-top: 15px;
+}
+
+.btn::before,
+.download::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+
+  background-size: 400%;
+  z-index: -2;
+  filter: blur(5px);
+  border-radius: 5px;
+
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn:hover::before,
+.download:hover::before {
+  opacity: 1;
+}
+.btn::after,
+.download::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.btn::after {
+  background: #000;
+}
+
+.download::after {
+  background: #0532ff;
+}
+
+.btn:active,
+.download:active {
+  color: #000;
+}
+
+.btn:active::after,
+.download:active::after {
+  background: transparent;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn::before,
+  .download::before {
+    animation: none;
+  }
+}
+
+/* FINALIZACIÓN DE NUEVO CONTENIDO */
+
+.input-contenedor {
+  caret-color: transparent;
+}
+.contenedorQR-padre {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 0;
+}
+.contenedorQR {
+  margin: 25px 0 0 0;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 90%;
+  height: 90%;
+}
+canvas {
+  background-color: #f2f2f2;
+  border: 2px solid #0532ff;
+  border-radius: 5px;
+  padding: 4px;
 }
 
 /* Modal de advertecia */

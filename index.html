@@ -26,8 +26,13 @@
     <section class="contenedor">
       <h1 class="contenedor-titulo">Inst4nt_QR</h1>
       <form id="formulario" class="formulario">
-        <input type="text" id="link" placeholder="Pega aquí el enlace" />
-        <input class="btn" type="submit" value="Generar QR" />
+        <input
+          class="input-contenedor"
+          type="text"
+          id="link"
+          placeholder="Pega aquí el enlace"
+        />
+        <button class="btn" type="submit" value="Generar QR">Generar QR</button>
       </form>
 
       <!-- boton de descarga -->
@@ -35,8 +40,11 @@
         Descargar QR
       </button>
 
+      <section class="contenedorQR-padre">
+        <div id="contenedorQR" class="contenedorQR"></div>
+      </section>
+
       <!-- Contenedor del QR -->
-      <div id="contenedorQR" class="contenedorQR"></div>
     </section>
 
     <!-- Modal de advertencia -->

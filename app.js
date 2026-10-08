@@ -10,11 +10,11 @@ const modalCerrar = document.getElementById("modal-cerrar");
 
 // Configuración de QRCode con menor complejidad (CorrectLevel.L)
 const QR = new QRCode(contenedorQR, {
-    width: 256,
-    height: 256,
+    width: 150,
+    height: 150,
     colorDark: "#000000",
     colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.L // <-- Clave para reducir la densidad del QR
+    correctLevel: QRCode.CorrectLevel.L 
 });
 
 // Función para mostrar el modal con título y mensaje personalizados
