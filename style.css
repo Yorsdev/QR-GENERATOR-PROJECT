@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.contenedor {
+  max-width: 90%;
+  width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border: 2px solid #3e14b2;
+  border-radius: 10px;
+  box-shadow: 4px 8px 16px 0px rgba(0, 0, 0, 0.25);
+}
+
+.contenedor-titulo {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3.5rem;
+  font-weight: bolder;
+  font-family: "Open Sans", sans-serif;
+  background: -webkit-linear-gradient(45deg, #5c18a3, #0532ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.formulario input[type="text"] {
+  padding: 20px;
+  border: none;
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.formulario .btn {
+  width: 100%;
+  border: none;
+  background: rgb(0, 0, 0);
+  color: #fff;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.formulario .btn:hover {
+  background: #3e14b2;
+}
+
+.contenedorQR {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.download {
+  width: 100%;
+  border: none;
+  background: #fff; /* Verde para destacar la acción de descarga */
+  color: #000;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.download:hover {
+  background: #55d600;
+  color: #fff;
+}
+
+/* Modal de advertecia */
+/* Contenedor oscuro de fondo */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Estado visible del modal */
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+}
+
+/* Caja de contenido del modal */
+.modal-contenido {
+  background: #f2f2f2;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-contenido {
+  transform: translateY(0);
+}
+
+.modal-contenido h3 {
+  margin-bottom: 10px;
+  color: #111;
+  font-size: 22px;
+}
+
+.modal-contenido p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 16px;
+}
+
+.btn-modal {
+  background: #3e14b2;
+  color: #f2f2f2;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  transition: background 0.2s ease;
+}
+
+.btn-modal:hover {
+  background: #2b0c80;
+}
